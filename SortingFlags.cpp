@@ -1,4 +1,4 @@
-#include "FileRead.h"
+#include "SortingFlags.h"
 #include <iostream>
 #include <algorithm>
 
@@ -43,7 +43,7 @@ bool compareLastName(Person& pers1, Person& pers2)
 
 bool compareIndex(Person& pers1, Person& pers2)
 {
-    return pers1.getIndex() < pers2.getIndex();
+    return pers1.getPhone() < pers2.getPhone();
 }
 
 void sortByFirstName(vector<Person>& vecPers)

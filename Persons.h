@@ -8,21 +8,21 @@ class Person
 {
 	string first_name;
 	string last_name;
-	int index;
+	int phone_number;
 
 public:
 	Person();
 	Person(const string& f_name, const string& s_name, int idx)
-		: first_name(f_name), last_name(s_name), index(idx) {}
+		: first_name(f_name), last_name(s_name), phone_number(idx) {}
 
 	const string& getFistName() const { return first_name; }				
 	const string& getLastName() const { return last_name; }
-	const int getIndex() const { return index; }
+	const int getPhone() const { return phone_number; }
     const string& popBack(); 
 
 	void setFirtName(const string& f_name) { first_name = f_name; }
 	void setLastName(const string& s_name) { last_name = s_name; }
-    void setIndec(const int idx) { index = idx; }
+    void setIndex(const int idx) { phone_number = idx; }
 
     bool operator < (Person& obj)const;
 

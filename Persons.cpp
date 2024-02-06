@@ -2,7 +2,7 @@
 
 Person::Person()
 {
-	first_name = ""; last_name = ""; index = 0;
+	first_name = ""; last_name = ""; phone_number = 0;
 }
 
 const string& Person::popBack()
@@ -13,8 +13,8 @@ const string& Person::popBack()
 
 bool Person::operator < (Person& obj) const
 {
-    if(this->index != obj.index)
-        return this->index < obj.index;
+    if(this->phone_number != obj.phone_number)
+        return this->phone_number < obj.phone_number;
 
     if(this->first_name != obj.first_name)
         return this->first_name < obj.first_name;
@@ -26,7 +26,7 @@ std::istream& operator >>(std::istream& is, Person& obj)
 {
 	is >> obj.first_name;
 	is >> obj.last_name;
-	is >> obj.index;
+	is >> obj.phone_number;
 	return is;
 }
 
@@ -36,6 +36,6 @@ std::ostream& operator <<(std::ostream& os, const Person& obj)
 	os << ' ';
 	os << obj.last_name;
 	os << ' ';
-	os << obj.index;
+	os << obj.phone_number;
 	return os;
 }

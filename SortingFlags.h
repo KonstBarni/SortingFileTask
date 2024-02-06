@@ -11,6 +11,6 @@ bool compareFirstName(Person& pers1, Person& pers2);
 bool compareLastName(Person& pers1, Person& pers2);
 bool compareIndex(Person& pers1, Person& pers2);
 
-void sortName(vector<Person>& vecPers);
+void sortByFirstName(vector<Person>& vecPers);
 void sortByLastName(vector<Person>& vecPers);
 void sortByIndex(vector<Person>& vecPers);
