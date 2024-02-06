@@ -1,5 +1,9 @@
 #pragma once
 #include <iostream>
-#include "SortingFlags.h"
+#include <fstream>
+#include "Sorter.h"
 
-void choiceSorting();
+#define PATH_FILE  "Persons.txt"
+
+vector<Person> getVec();      // get a vector of persons from a file
+void choiceSorting();       // choosing a sort

@@ -1,14 +1,39 @@
 #include <vector>
-#include <iomanip>
 #include "ChoiceSort.h"
-#include "SortingFlags.h"
+#include "Sorter.h"
 #include "Persons.h"
 
 using namespace std;
 
+vector<Person> getVec()
+{
+    vector<Person> vec;
+    fstream f_read;
+    f_read.open(PATH_FILE, fstream::in | fstream::out);
+
+    if(!f_read)
+        cout<<"File not exist!" << endl;
+
+    f_read.seekg(0, ios_base::beg);
+
+    while(true)
+    {
+        if(f_read.eof())
+            break;
+        Person pers;
+        f_read >> pers;
+        pers.popBack();
+        vec.push_back(pers);	
+    }
+	f_read.close();
+
+    return vec;
+}
+
 void choiceSorting()
 {
     vector<Person> vectPersons = getVec();
+    Sorter doSort(vectPersons);
 
     while(true)
     {
@@ -27,18 +52,18 @@ void choiceSorting()
         switch(choice)
         {
             case 1:
-                sortByFirstName(vectPersons);
-                for(auto pers : vectPersons)
+                doSort.sortByFirstName();
+                for(auto pers : doSort.vectorPersons)
                 {
-                    cout << pers.getFistName() << " ";
+                    cout << pers.getFistName()<< " ";
                     cout << pers.getLastName() << ": ";
                     cout << pers.getPhone() << endl;
                 }
                 break;
 
             case 2:
-                sortByLastName(vectPersons);
-                for(auto pers : vectPersons)
+                doSort.sortByLastName();
+                for(auto pers :doSort.vectorPersons)
                 {
                     cout << pers.getLastName() << " ";
                     cout << pers.getFistName() << ": ";
@@ -47,8 +72,8 @@ void choiceSorting()
                 break;
 
             case 3:
-                sortByIndex(vectPersons);
-                for(auto pers : vectPersons)
+                doSort.sortPhoneNumber();
+                for(auto pers : doSort.vectorPersons)
                 {
                     cout << pers.getPhone() << ": ";
                     cout << pers.getFistName() << " ";
