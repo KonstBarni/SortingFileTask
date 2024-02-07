@@ -26,7 +26,7 @@ public:
 	void setLastName(const string& s_name) { last_name = s_name; }
     void setPhone(const int number) { phone_number = number; }
 
-    bool operator < (Person& obj)const;		//operator of compire
+    bool operator < (Person& obj)const;		//comparison operator
 
 	// operators  of input/output
 	friend std::istream& operator >>(std::istream& is, Person& obj);

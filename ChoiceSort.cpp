@@ -5,7 +5,7 @@
 
 using namespace std;
 
-vector<Person> getVec()
+vector<Person> getVector()
 {
     vector<Person> vec;
     fstream f_read;
@@ -32,7 +32,7 @@ vector<Person> getVec()
 
 void choiceSorting()
 {
-    vector<Person> vectPersons = getVec();
+    vector<Person> vectPersons = getVector();
     Sorter doSort(vectPersons);
 
     while(true)
